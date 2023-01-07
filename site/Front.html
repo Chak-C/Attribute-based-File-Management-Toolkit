@@ -2,11 +2,11 @@
   <head>
     <title>CSV Viewer</title>
     <style>
-        div {
-            width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
+      .container {
+        width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
       table {
         border-collapse: collapse;
       }
@@ -17,15 +17,23 @@
     </style>
   </head>
   <body>
-    <form>
-      <label for="file-input">Select a CSV file:</label><br>
-      <input type="file" id="file-input" accept=".csv">
-    </form>
-    <div id="output"></div>
+    <div class="container">
+      <form>
+        <label for="file-input">Select a CSV file:</label><br>
+        <input type="file" id="file-input" accept=".csv">
+      </form>
+      <form id="search-form">
+        <label for="search-input">Search:</label>
+        <input type="text" id="search-input">
+        <button type="submit">Go</button>
+      </form>
+      <div id="output"></div>
+    </div>
     <script src="PapaParse-5.0.2/papaparse.js"></script>
     <script>
       const input = document.querySelector('#file-input');
       const output = document.querySelector('#output');
+      let data;
 
       input.addEventListener('change', () => {
         const file = input.files[0];
@@ -37,7 +45,7 @@
           reader.onload = () => {
             try {
               const csvData = reader.result;
-              const data = Papa.parse(csvData).data;
+              data = Papa.parse(csvData).data;
 
               // build an HTML table from the data
               const table = document.createElement('table');
@@ -81,4 +89,3 @@
     </script>
   </body>
 </html>
-
