@@ -8,9 +8,10 @@ To use what is saved. To reorder what is messed up.
 
 Contents
 ========================================
-1. Powershell scripts
-2. dk
-3. dk
+1. Powershell scripts as original/fundamental scripts
+2. Javascript as webpage event listeners, define logic paths
+3. html as frontend page design.
+4. PapaParse library is used for parsing CSV files, I do not own anything in that folder.
 
 Contributing
 ========================================
