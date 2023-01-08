@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>CSV Viewer</title>
+    <title>Questionable</title>
     <style>
       .container {
         width: 800px;
@@ -22,10 +22,21 @@
         <label for="file-input">Select a CSV file:</label><br>
         <input type="file" id="file-input" accept=".csv">
       </form>
-      <form id="search-form">
-        <label for="search-input">Search:</label>
-        <input type="text" id="search-input">
-        <button type="submit">Go</button>
+
+      <form id="filter-form">
+        <label for="filter-select">Filter by section:</label>
+        <select id="filter-select">
+          <option value="All">Show all</option>
+          <option value="Origin">Origin</option>
+          <option value="Position">Position</option>
+          <option value="Hair">Hair</option>
+          <option value="Tags">Tags</option>
+        </select>
+      </form>
+      
+      <form id="filterCol-form">
+        <label for="filter-col">Filter column:</label>
+        <input type="text" id="filter-col">
       </form>
       <div id="output"></div>
     </div>
