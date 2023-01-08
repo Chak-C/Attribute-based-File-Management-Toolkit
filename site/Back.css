@@ -1,0 +1,22 @@
+.upload-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em 0;
+  }
+  
+  .upload-button {
+    display: inline-block;
+    font-size: 0.75em;
+    color: rgb(233, 233, 233);
+    cursor: pointer;
+    background-color: rgb(26, 26, 27);
+    padding: 1em;
+    border-radius: 5px;
+    border: 1px solid #999;
+  }
+  
+  .upload-button i {
+    margin-right: 0.5em;
+  }
+  
