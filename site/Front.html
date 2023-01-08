@@ -16,7 +16,7 @@
       }
     </style>
   </head>
-  <body>
+  <body style="background-image: url('file:///C:/DEV/Temporary/H2/Questionable/82860844_p1.png'); background-position: 0 -150px; background-size: cover">
     <div class="container">
       <form>
         <label for="file-input">Select a CSV file:</label><br>
@@ -26,18 +26,14 @@
       <form id="filter-form">
         <label for="filter-select">Filter by section:</label>
         <select id="filter-select">
-          <option value="All">Show all</option>
-          <option value="Origin">Origin</option>
-          <option value="Position">Position</option>
-          <option value="Hair">Hair</option>
-          <option value="Tags">Tags</option>
         </select>
       </form>
       
-      <form id="filterCol-form">
-        <label for="filter-col">Filter column:</label>
-        <input type="text" id="filter-col">
+      <form id="search-form">
+        <input type="text" id="search-input" placeholder="Search...">
+        <button type="submit">Go</button>
       </form>
+      
       <div id="output"></div>
     </div>
     <script src="PapaParse-5.0.2/papaparse.js"></script>

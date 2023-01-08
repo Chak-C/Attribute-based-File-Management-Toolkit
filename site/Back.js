@@ -21,6 +21,13 @@ input.addEventListener('change', () => {
         const values = data.map(row => row[1]);
         const uniqueValues = Array.from(new Set(values));
 
+        // update the options in the dropdown menu
+        const select = document.querySelector('#filter-select');
+        select.innerHTML = `
+          <option value="All">Show all</option>
+          ${generateOptions(data)}
+        `;
+
         // build an HTML table from the data
         const table = document.createElement('table');
         const thead = document.createElement('thead');
@@ -60,6 +67,17 @@ input.addEventListener('change', () => {
     }
   });
   
+  // filter by section
+  function generateOptions(data) {
+    // get the unique values from the second column of the data array
+    const values = data.slice(1).map(row => row[1]);
+    const uniqueValues = Array.from(new Set(values));
+  
+    // generate the option elements for the dropdown menu
+    return uniqueValues.map(value => `<option value="${value}">${value}</option>`).join('');
+  }
+
+  
   const select = document.querySelector('#filter-select');
   
   select.addEventListener('change', () => {
@@ -78,30 +96,43 @@ input.addEventListener('change', () => {
     });
   });
   
+  //keyword search
+  function searchRows(keywords) {
+    // get all the rows in the table
+    const rows = document.querySelectorAll('tbody tr');
   
-
-
-//listens for column change
-const filterCol = document.querySelector('#filterCol-form');
-
-filterCol.addEventListener('change', event => {
-  event.preventDefault();
-
-  // get the search query from the input element
-  const input = document.querySelector('#search-input');
-  const query = input.value.trim().toLowerCase();
-
-  // search the tables for rows that match the query
-  const tables = Array.from(document.querySelectorAll('table'));
-  tables.forEach(table => {
-    const rows = Array.from(table.querySelectorAll('tbody tr'));
+    // search the rows for the keywords
     rows.forEach(row => {
-      const cells = Array.from(row.querySelectorAll('td'));
-      if (!cells.some(cell => cell.textContent.toLowerCase().includes(query))) {
-        row.style.display = 'none';
-      } else {
+      let match = false;
+  
+      // get the cells in the row
+      const cells = row.querySelectorAll('td');
+  
+      // search the cells for the keywords
+      cells.forEach(cell => {
+        if (cell.textContent.toLowerCase().includes(keywords)) {
+          match = true;
+        }
+      });
+  
+      // show or hide the row based on the search result
+      if (match) {
         row.style.display = '';
+      } else {
+        row.style.display = 'none';
       }
     });
-  });
+  }
+  
+const form = document.querySelector('#search-form');
+form.addEventListener('submit', event => {
+  event.preventDefault();
+
+  // get the search keywords
+  const input = document.querySelector('#search-input');
+  const keywords = input.value.toLowerCase();
+
+    // search the rows
+    searchRows(keywords);
 });
+
