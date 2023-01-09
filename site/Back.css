@@ -1,4 +1,12 @@
- /* CSV file button styles */
+ /* Default general styles */  
+ 
+ .container {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+    /* CSV file button styles */
 .upload-container {
     display: flex;
     align-items: center;
@@ -22,16 +30,10 @@
   }
 
 /* Table styles */
-table {
-    border-collapse: collapse;
-    border: 1px solid;
+td {
+    border: 1px solid black;
+    padding: 8px
 }
-
-    /* I think i need help with this, i can't make thead invisible, just fix the dark mode somehow lol 
-table thead {
-    border: none
-}
-*/
 
 /* Dark mode slidebar styles */
 .dark-mode-container {

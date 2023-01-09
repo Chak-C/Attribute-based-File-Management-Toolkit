@@ -96,7 +96,7 @@ input.addEventListener('change', () => {
     });
   });
   
-  //keyword search
+  /* search keyword */
   function searchRows(keywords) {
     // get all the rows in the table
     const rows = document.querySelectorAll('tbody tr');
@@ -157,5 +157,3 @@ if (this.value === '0') {
     document.body.classList.add('dark-mode');
 }
 });
-  
-
