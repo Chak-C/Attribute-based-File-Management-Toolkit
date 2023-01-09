@@ -10,7 +10,7 @@ Contents
 ========================================
 1. Powershell scripts as original/fundamental scripts
 2. Javascript as webpage event listeners, define logic paths
-3. html as frontend page design.
+3. html, css as frontend page design.
 4. PapaParse library is used for parsing CSV files, I do not own anything in that folder.
 
 Contributing
