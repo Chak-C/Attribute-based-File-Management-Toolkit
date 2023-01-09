@@ -125,7 +125,7 @@ input.addEventListener('change', () => {
   }
   
 const form = document.querySelector('#search-form');
-form.addEventListener('submit', event => {
+form.addEventListener('input', event => {
   event.preventDefault();
 
   // get the search keywords
