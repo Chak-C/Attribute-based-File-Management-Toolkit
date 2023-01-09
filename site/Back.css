@@ -1,3 +1,4 @@
+ /* CSV file button styles */
 .upload-container {
     display: flex;
     align-items: center;
@@ -19,4 +20,71 @@
   .upload-button i {
     margin-right: 0.5em;
   }
+
+/* Table styles */
+table {
+    border-collapse: collapse;
+    border: 1px solid;
+}
+
+    /* I think i need help with this, i can't make thead invisible, just fix the dark mode somehow lol 
+table thead {
+    border: none
+}
+*/
+
+/* Dark mode slidebar styles */
+.dark-mode-container {
+    display: flex;
+    align-items: center;
+  }
   
+#dark-mode-toggle {
+    -webkit-appearance: none;
+    width: 50px;
+    height: 20px;
+    border-radius: 10px;
+    background: #ddd;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  #dark-mode-toggle::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #333;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  #dark-mode-toggle::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #333;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .dark-mode .upload-button {
+    color: #fff;
+    background-color: #444;
+  }
+  
+  .dark-mode .upload-button:hover {
+    color: #333;
+    background-color: #fff;
+  }
+  
+  .dark-mode td {
+    border: 2px solid rgb(186, 186, 186);
+    border-collapse: collapse;
+    border-spacing: 0;
+    }

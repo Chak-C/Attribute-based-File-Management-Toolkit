@@ -13,9 +13,6 @@
         margin: 0 auto;
         text-align: center;
       }
-      table {
-        border-collapse: collapse;
-      }
       td, th {
         border: 1px solid black;
         padding: 8px;
@@ -23,6 +20,12 @@
     </style>
   </head>
   <body style="background-image: url('file:///C:/DEV/Temporary/H2/Questionable/82860844_p1.png'); background-position: 0 -150px; background-size: cover">
+    
+    <div class="dark-mode-container">
+      <label for="dark-mode-toggle">Dark Mode:</label>
+      <input type="range" id="dark-mode-toggle" min="0" max="1" value="0" data-dark-mode="false">
+    </div>
+
     <div class="upload-container">
       <form id="upload-form" action="#">
         <label for="file-input" class="upload-button">

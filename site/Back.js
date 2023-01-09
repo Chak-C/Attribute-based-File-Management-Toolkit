@@ -1,4 +1,4 @@
-//Listens for csv file change
+/*Listens for csv file change */
 const input = document.querySelector('#file-input');
 const output = document.querySelector('#output');
 let data;
@@ -67,7 +67,7 @@ input.addEventListener('change', () => {
     }
   });
   
-  // filter by section
+  /* filter by section */
   function generateOptions(data) {
     // get the unique values from the second column of the data array
     const values = data.slice(1).map(row => row[1]);
@@ -135,4 +135,27 @@ form.addEventListener('input', event => {
     // search the rows
     searchRows(keywords);
 });
+
+/* Dark mode */
+function toggleDarkMode() {
+    const body = document.querySelector('body');
+    const toggle = document.querySelector('#dark-mode-toggle');
+  
+    if (toggle.checked) {
+      body.classList.add('dark-mode');
+    } else {
+      body.classList.remove('dark-mode');
+    }
+  }
+  
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+darkModeToggle.addEventListener('input', function() {
+if (this.value === '0') {
+    document.body.classList.remove('dark-mode');
+} else {
+    document.body.classList.add('dark-mode');
+}
+});
+  
 
